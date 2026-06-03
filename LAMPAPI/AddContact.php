@@ -13,10 +13,10 @@
 	else
 	{
 		// Add new contact into the database
-		$stmt = $conn->prepare("INSERT INTO Contacts (UserID, FirstName, LastName, Email, Phone) VALUES (?, ?, ?, ?, ?)");
+		$stmt = $conn->prepare("INSERT INTO Contacts (userID, firstName, lastName, email, phone) VALUES (?, ?, ?, ?, ?)");
 		$stmt->bind_param("issss", $userId, $inData["firstName"], $inData["lastName"], $inData["email"], $inData["phone"]);
 		$stmt->execute();
-		$contactId = $conn->insert_id;
+		$contactId = $stmt->insert_id;
 		$stmt->close();
 		$conn->close();
 	 	
