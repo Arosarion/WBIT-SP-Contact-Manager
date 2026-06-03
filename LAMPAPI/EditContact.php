@@ -10,28 +10,27 @@
     }
     else
     {
-        // Rest of DeleteContact.php logic goes here
-        $contactId = $inData["contactId"];
-        $userId = $inData["userId"];
-        
-        $stmt = $conn->prepare("DELETE FROM Contacts WHERE ID = ? AND UserID = ?");
-        
-        $stmt->bind_param("ii", $contactId, $userId);
-        $stmt->execute();
-        // Check if any rows were affected
-        if($stmt->affective_rows > 0)
-        {
-            returnWithError("");
-        }
-        else
-        {
-            returnWithError("No contact found or deletion failed.");
-        }
+        // Rest of EditContact.php logic goes here
+        $contactID = $inData["contactID"];
+        $firstName = $inData["firstName"];
+        $lastName = $inData["lastName"];
+        $email = $inData["email"];
+        $phone = $inData["phone"];
+        $userID = $inData["userID"];
 
+        $stmt  = $conn->prepare("UPDATE Contacts SET firstName=?, lastName=?, email=?, phone=? WHERE contactID=? AND userID=?");
+        $stmt->bind_param("ssssii", $firstName, $lastName, $email, $phone, $contactID, $userID);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            returnWithInfo("Contact updated successfully");
+        } else {
+            returnWithError("No contact found with the provided contactID and userID, or no changes were made.");
+        }
         $stmt->close();
         $conn->close();
     }
-    // Helper functions
+
     function getRequestInfo()
     {
         return json_decode(file_get_contents('php://input'), true);
@@ -45,6 +44,7 @@
 
     function returnWithError($err)
     {
-        $retValue = '("error":"' . $err . '")';
+        $retValue = '{"error":"' . $err . '"}';
         sendResultInfoAsJson($retValue);
     }
+    
