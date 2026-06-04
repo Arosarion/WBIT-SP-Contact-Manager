@@ -16,15 +16,33 @@
         $password = $inData["password"];
         // Creates password hash for security
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        /* Check if the user already exists in the database before registration*/
+        $check = $conn->prepare("SELECT ID FROM Users WHERE login=?");
+        $check->bind_param("s", $login);
+        $check->execute();
+        $check->store_result();
+
+        if($check->num_rows > 0)
+        {
+            returnWithError("Username already exists.");
+            $check->close();
+            $conn->close();
+            return;
+        }
+        $check->close();
+
+        /* Continue with registration */
+        
         //Sends to database
-        $stmt = $conn->prepare("INSERT INTO Users (firstName, LastName, Login, Password) VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO Users (firstName, LastName, login, password) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $firstName, $lastName, $login, $hashedPassword);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0)
             {
-                $userId = $conn->insert_id;
-                returnWithInfo($userID, $firstName, $lastName, $login);
+                $userId = $stmt->insert_id;
+                returnWithInfo($userId, $firstName, $lastName, $login);
             }
             else
             {

@@ -47,4 +47,10 @@
         $retValue = '{"message":"' . $message . '","error":""}';
         sendResultInfoAsJson($retValue);
     }
-    
+
+    function returnWithError($err)
+    {
+        $retValue = '{"error":"' . $err . '"}';
+        sendResultInfoAsJson($retValue);
+    }
+        
