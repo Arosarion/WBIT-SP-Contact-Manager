@@ -23,7 +23,7 @@
 
         if ($stmt->affected_rows > 0)
             {
-                $userID = $conn->insert_id;
+                $userId = $conn->insert_id;
                 returnWithInfo($userId, $firstName, $lastName, $login);
             }
             else
