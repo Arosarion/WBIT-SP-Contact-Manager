@@ -40,9 +40,9 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	// Return contact info as Json 
-	function returnWithInfo( $id, $firstName, $lastName, $email, $phone) 
-	{
-		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","email":"' . $email . '","phone":"' . $phone . '","error":""}';
-		sendResultInfoAsJson( $retValue );
-	}
+	function returnWithInfo($id, $firstName, $lastName, $email, $phone)
+{
+    $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","email":"' . $email . '","phone":"' . $phone . '","error":""}';
+    sendResultInfoAsJson($retValue);
+}
 ?>
