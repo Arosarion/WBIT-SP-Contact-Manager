@@ -24,7 +24,7 @@
         if ($stmt->affected_rows > 0)
             {
                 $userId = $conn->insert_id;
-                returnWithInfo($userId, $firstName, $lastName, $login);
+                returnWithInfo($userID, $firstName, $lastName, $login);
             }
             else
             {
@@ -52,7 +52,7 @@
     sendResultInfoAsJson($retValue);
     }
 
-    function returnWithInfo($userId, $firstName, $lastName, $login)
+    function returnWithInfo($userID, $firstName, $lastName, $login)
     {
         $retValue = '{"id":' . $userId . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","login":"' . $login . '"}';
         sendResultInfoAsJson($retValue);
