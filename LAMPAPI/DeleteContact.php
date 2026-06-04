@@ -14,7 +14,7 @@
         $contactId = $inData["contactId"];
         $userId = $inData["userId"];
         
-       $stmt = $conn->prepare("DELETE FROM Contacts WHERE contactId = ? AND userId = ?"); 
+       $stmt = $conn->prepare("DELETE FROM Contacts WHERE contactID = ? AND userID = ?"); 
 
         $stmt->bind_param("ii", $contactId, $userId);
         $stmt->execute();
