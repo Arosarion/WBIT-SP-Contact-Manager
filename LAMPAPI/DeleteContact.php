@@ -11,10 +11,10 @@
     else
     {
         // Rest of DeleteContact.php logic goes here
-        $contactId = $inData["contactID"];
-        $userId = $inData["userID"];
+        $contactId = $inData["contactId"];
+        $userId = $inData["userId"];
         
-       $stmt = $conn->prepare("DELETE FROM Contacts WHERE contactID = ? AND userID = ?"); 
+       $stmt = $conn->prepare("DELETE FROM Contacts WHERE contactId = ? AND userId = ?"); 
 
         $stmt->bind_param("ii", $contactId, $userId);
         $stmt->execute();
