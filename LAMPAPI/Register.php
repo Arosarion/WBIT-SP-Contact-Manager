@@ -52,7 +52,7 @@
     sendResultInfoAsJson($retValue);
     }
 
-    function returnWithInfo($userID, $firstName, $lastName, $login)
+    function returnWithInfo($userId, $firstName, $lastName, $login)
     {
         $retValue = '{"id":' . $userId . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","login":"' . $login . '"}';
         sendResultInfoAsJson($retValue);
