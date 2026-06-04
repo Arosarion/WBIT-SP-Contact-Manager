@@ -18,7 +18,7 @@
         $phone = $inData["phone"];
         $userId = $inData["userId"];
 
-        $stmt  = $conn->prepare("UPDATE Contacts SET firstName=?, lastName=?, email=?, phone=? WHERE contactId=? AND userId=?");
+        $stmt  = $conn->prepare("UPDATE Contacts SET firstName=?, lastName=?, email=?, phone=? WHERE contactID=? AND userID=?");
         $stmt->bind_param("ssssii", $firstName, $lastName, $email, $phone, $contactId, $userId);
         $stmt->execute();
 
