@@ -11,15 +11,15 @@
     else
     {
         // Rest of EditContact.php logic goes here
-        $contactID = $inData["contactID"];
+        $contactID = $inData["contactId"];
         $firstName = $inData["firstName"];
         $lastName = $inData["lastName"];
         $email = $inData["email"];
         $phone = $inData["phone"];
-        $userID = $inData["userID"];
+        $userID = $inData["userId"];
 
-        $stmt  = $conn->prepare("UPDATE Contacts SET firstName=?, lastName=?, email=?, phone=? WHERE contactID=? AND userID=?");
-        $stmt->bind_param("ssssii", $firstName, $lastName, $email, $phone, $contactID, $userID);
+        $stmt  = $conn->prepare("UPDATE Contacts SET firstName=?, lastName=?, email=?, phone=? WHERE contactId=? AND userId=?");
+        $stmt->bind_param("ssssii", $firstName, $lastName, $email, $phone, $contactId, $userId);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
