@@ -14,7 +14,7 @@
 	else
 	{
 		// Search using partial match.
-		$stmt = $conn->prepare("SELECT ID, firstName, lastName, email, phone FROM Contacts WHERE (firstName LIKE ? OR lastName LIKE ? OR email LIKE ? OR phone LIKE ?) AND userID=?");
+		$stmt = $conn->prepare("SELECT contactID, firstName, lastName, email, phone FROM Contacts WHERE (firstName LIKE ? OR lastName LIKE ? OR email LIKE ? OR phone LIKE ?) AND userID=?");
 		$searchTerm = "%" . $inData["search"] . "%"; // Add wildcards for partial matching
 		$stmt->bind_param("ssssi", $searchTerm, $searchTerm, $searchTerm, $searchTerm, $inData["userId"]);
 		$stmt->execute();
@@ -30,7 +30,7 @@
 			}
 			$searchCount++;
 			// Build Json array of search results
-			$searchResults .= '{"id":' . $row["ID"] . ',"firstName":"' . $row["firstName"] . '","lastName":"' . $row["lastName"] . '","email":"' . $row["email"] . '","phone":"' . $row["phone"] . '"}';
+			$searchResults .= '{"id":' . $row["contactID"] . ',"firstName":"' . $row["firstName"] . '","lastName":"' . $row["lastName"] . '","email":"' . $row["email"] . '","phone":"' . $row["phone"] . '"}';
 		}
 		
 		if( $searchCount == 0 )

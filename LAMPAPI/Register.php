@@ -10,6 +10,69 @@
     }
     else
     {
-        // rest of Register.php logic
+        $firstName = $inData["firstName"];
+        $lastName = $inData["lastName"];
+        $login = $inData["login"];
+        $password = $inData["password"];
+        // Creates password hash for security
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        /* Check if the user already exists in the database before registration*/
+        $check = $conn->prepare("SELECT ID FROM Users WHERE login=?");
+        $check->bind_param("s", $login);
+        $check->execute();
+        $check->store_result();
+
+        if($check->num_rows > 0)
+        {
+            returnWithError("Username already exists.");
+            $check->close();
+            $conn->close();
+            return;
+        }
+        $check->close();
+
+        /* Continue with registration */
+        
+        //Sends to database
+        $stmt = $conn->prepare("INSERT INTO Users (firstName, LastName, login, password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $firstName, $lastName, $login, $hashedPassword);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0)
+            {
+                $userId = $stmt->insert_id;
+                returnWithInfo($userId, $firstName, $lastName, $login);
+            }
+            else
+            {
+                returnWithError("Failed to create user.");
+            }
+            $stmt->close();
+            $conn->close();
     }
-    // Function to get Json input from the request
+    // Helper functions
+
+    function getRequestInfo()
+    {
+        return json_decode(file_get_contents('php://input'), true);
+    }
+
+    function sendResultInfoAsJson($obj)
+    {
+        header('Content-type: application/json');
+        echo $obj;
+    }
+
+    function returnWithError($err)
+    {
+    $retValue = '{"id":0,"firstName":"","lastName":"","login":"","error":"' . $err . '"}';  
+    sendResultInfoAsJson($retValue);
+    }
+
+    function returnWithInfo($userId, $firstName, $lastName, $login)
+    {
+        $retValue = '{"id":' . $userId . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","login":"' . $login . '"}';
+        sendResultInfoAsJson($retValue);
+    }
+    ?>
