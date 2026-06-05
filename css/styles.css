@@ -19,7 +19,26 @@ body
     background-attachment: fixed; /* Optional: stays fixed when scrolling */
 }
 
-#title 
+
+#text1{
+    margin-left: 10px;
+}
+
+#text2{
+    margin-left: 10px;
+}
+#loginDiv {
+    position: relative;
+    top: 100px;
+    max-width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #ffffff8b;
+    border-radius: 10px;
+}
+
+#h1
 {
     font-size: 80px;
     margin-top: 50px;
@@ -30,19 +49,9 @@ body
     color: #000000;
 }
 
-#loginDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 15px;
-    background-color: #b2b2b28b;
-    border-radius: 10px;
-
-}
-
 #loggedInDiv
 {
+    
     font-size: 30px;
     width: 70%;
     margin-left: 15%;
@@ -63,8 +72,8 @@ body
 {
     font-size: 30px;
     border-radius: 25px;
-    width: 15%;
-    margin-left: 450px;
+    width: 20%;
+    margin-left: 300px;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -92,20 +101,17 @@ body
 }
 
 input[type="text"],input[type="password"]{
-    border-radius: 25px;
+    border-radius: 15px;
     text-align: center;
-    width: 80%;
-    margin-left: 10%;
+    width: 30%;
     margin-bottom: 2%;
     font-family: 'Ubuntu', sans-serif;
 }
 
 #inner-title{
     display: inline-block;
-    font-size: 0.8em;
+    font-size: 1 em;
     width: 90%;
-    text-align: center;
-    margin-left: 5%;
     margin-bottom: 2%;
     font-family: 'Ubuntu', sans-serif;
     color: #000000;
