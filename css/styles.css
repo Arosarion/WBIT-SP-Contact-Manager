@@ -1,16 +1,33 @@
+/* 1. Define the custom font at the top of your CSS file */
+@font-face {
+    font-family: 'StyleScript';
+    src: url('./assets/StyleScript-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Keeps text visible while the font loads */
+}
 body 
 {
-    background-color: #707070;
+    background-color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url('../images/Texturelabs_Paper_361L.jpg');
+    background-size: cover;      /* Fill entire screen */
+    background-position: center; /* Center image */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: stays fixed when scrolling */
 }
 
 #title 
 {
-    font-size: 40px;
+    font-size: 80px;
+    margin-top: 50px;
     width: 100%;
-    margin: 2% 5%;
+    /*margin: 2% 5%;*/
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FFFFFF;
+    font-family: 'StyleScript', sans-serif;
+    color: #000000;
 }
 
 #loginDiv
@@ -18,8 +35,10 @@ body
     font-size: 30px;
     width: 70%;
     margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
+    padding: 15px;
+    background-color: #b2b2b28b;
+    border-radius: 10px;
+
 }
 
 #loggedInDiv
@@ -44,8 +63,8 @@ body
 {
     font-size: 30px;
     border-radius: 25px;
-    width: 50%;
-    margin-left: 25%;
+    width: 15%;
+    margin-left: 450px;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -89,7 +108,7 @@ input[type="text"],input[type="password"]{
     margin-left: 5%;
     margin-bottom: 2%;
     font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+    color: #000000;
 }
 
 #loginResult{
