@@ -188,68 +188,66 @@ select{
 
 //contact css test
 
-
-#editDiv
+#contactListDiv
 {
-    width: 50%;
-    margin: 20px auto;
+    width: 70%;
+    margin: 30px auto;
     padding: 20px;
-
-    background-color: rgba(248, 247, 243, 0.85);
-
+    background-color: rgba(248,247,243,0.85);
     border-radius: 10px;
-
-    text-align: center;
-
+    test-align: center;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
 }
 
-#editDiv h2
+#contactListDiv h2
 {
+    margin-bottom: 20px;
     font-family: 'PlayFairDisplay', sans-serif;
-    margin-bottom: 15px;
 }
 
-#editDiv input[type="text"]
+#contactListContainer
 {
-    width: 80%;
-    margin: 8px auto;
-    padding: 10px;
-
-    border: none;
-    border-radius: 20px;
-
-    font-size: 18px;
-
-    display: block;
+    text-align: left;
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
 }
 
-#editDiv button
+.contactCard
 {
-    font-size: 18px;
-
-    border-radius: 25px;
-
-    border: none;
-
-    background-color: #fffa71;
-
-    padding: 10px 20px;
-
-    margin-top: 15px;
-
-    cursor: pointer;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
 }
 
-#editDiv button:hover
+.contactCard:hover
 {
-    background-color: #00d5124f;
-    color: white;
+    background-color: #eeeeee;
 }
 
-#editResult
+.contactName
 {
-    display: block;
-    margin-top: 10px;
+    font-size: 20px;
     font-weight: bold;
+}
+
+.contactInfo
+{
+    margin-top: 5px;
+    color: #555;
+}
+
+.contactButtons
+{
+    margin-top: 10px;
+}
+
+.contactButtons button
+{
+    margin-right: 8px;
 }
