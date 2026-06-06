@@ -201,8 +201,13 @@ select{
 
 #contactListDiv h2
 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
     margin-bottom: 20px;
-    font-family: 'PlayFairDisplay', sans-serif;
+    color: black;
 }
 
 #contactListContainer
