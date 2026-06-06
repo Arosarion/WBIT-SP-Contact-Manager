@@ -6,6 +6,20 @@
     font-style: normal;
     font-display: swap; /* Keeps text visible while the font loads */
 }
+@font-face {
+    font-family: 'PlayFairDisplay';
+    src: url('./assets/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Keeps text visible while the font loads */
+}
+#title{
+    text-align: left;
+    font-family: 'PlayFairDisplay', sans-serif;
+    color: #a7a513;
+    margin-top: 1%;
+    margin-left: 1%;
+}
 body 
 {
     background-color: #ffffff;
@@ -47,6 +61,7 @@ a{
     color: #1131ff;
 }
 
+
 h1
 {
     font-size: 40px;
@@ -60,18 +75,6 @@ h1
 h3{
     padding-left: 5%;
 }
-
-#loggedInDiv
-{
-    
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
-    box-shadow: #000000;
-}
-
 #accessUIDiv
 {
     font-size: 30px;
@@ -131,7 +134,7 @@ input[type="text"],input[type="password"]{
     border: none;
     border-radius: 20px;
     text-align: left;
-    width: 80%;
+    width: 90%;
     
     font-family: 'Ubuntu', sans-serif;
 }
