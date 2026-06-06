@@ -261,7 +261,10 @@ function deleteContact(contactId){
             if (this.readyState == 4 && this.status == 200) {
                 let jsonObject = JSON.parse(xhr.responseText);
                 if(jsonObject.error == "") {
-                    searchContacts();
+                    document.getElementById("contactSearchResult").innerHTML = "Contact has been deleted.";
+    				setTimeout(function() {
+						searchContacts();
+					}, 1000); // wait 1 second before refreshing
                 } else {
                     document.getElementById("contactSearchResult").innerHTML = jsonObject.error;
                 }
@@ -299,9 +302,11 @@ function editContact(contactId)
                 let jsonObject = JSON.parse(xhr.responseText);
                 if(jsonObject.error == "")
                 {
-                    document.getElementById("editResult").innerHTML = "Contact updated successfully.";
-                    document.getElementById("editDiv").style.display = "none";
-                    searchContacts();
+                   document.getElementById("editResult").innerHTML = "Contact updated successfully.";
+					document.getElementById("editDiv").style.display = "none";
+					setTimeout(function() {
+    					searchContacts();
+					}, 1000); 
                 }
                 else
                 {
