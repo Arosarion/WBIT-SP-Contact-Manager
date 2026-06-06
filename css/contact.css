@@ -1,0 +1,188 @@
+/* 1. Define the custom font at the top of your CSS file */
+@font-face {
+    font-family: 'StyleScript';
+    src: url('./assets/StyleScript-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Keeps text visible while the font loads */
+}
+@font-face {
+    font-family: 'PlayFairDisplay';
+    src: url('./assets/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Keeps text visible while the font loads */
+}
+#title{
+    text-align: left;
+    font-family: 'PlayFairDisplay', sans-serif;
+    color: #a7a513;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+body 
+{
+    background-color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url('../images/147736.jpg');
+    background-size: cover;      /* Fill entire screen */
+    background-position: center; /* Center image */
+    background-repeat: repeat;
+    background-attachment: fixed; /* Optional: stays fixed when scrolling */
+}
+
+
+#text1{
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+#text2{
+    margin-left: 20px;
+    font-size: 20px;
+}
+#loginDiv {
+    position: relative;
+    top: 100px;
+    max-width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #f8f7f3d2;
+    border-radius: 10px;
+}
+a{
+    display: block;
+    text-align: right;
+    padding-right: 5%;
+    text-decoration: none;
+    color: #1131ff;
+}
+
+
+h1
+{
+    font-size: 40px;
+    margin-top: 50px;
+    width: 100%;
+    /*margin: 2% 5%;*/
+    text-align: center;
+    font-family: 'StyleScript', sans-serif;
+    color: #000000;
+}
+h3{
+    padding-left: 5%;
+}
+#accessUIDiv
+{
+    font-size: 30px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 25px;
+    background-color: #b2b2b2;
+}
+
+.buttons
+{
+    font-size: 20px;
+    border-radius: 25px;
+    width: 20%;
+    border: none;
+    background-color: #fffa71;
+   
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 5%;
+    margin-left: 6%;
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.buttons:hover{
+    background-color: #00d5124f;
+    color: #ffffff;
+    opacity: 50%;
+}
+
+#editFirstName
+{
+	font-size: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#editLastName
+{
+	font-size: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#editEmail
+{
+	font-size: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#editPhone
+{
+	font-size: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+input[type="text"],input[type="password"]{
+    margin-left: 20px;
+    border: none;
+    border-radius: 20px;
+    text-align: left;
+    width: 90%;
+    
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#inner-title{
+    display: inline-block;
+    font-size: 1 em;
+    width: 90%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #000000;
+}
+
+#loginResult{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+#userName{
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+#logoutButton{
+    width: 20%;
+    margin-left: 40%;
+}
+
+select{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 2%;
+    font-size: 0.75em;
+    font-family: 'Ubuntu', sans-serif;
+}
+
