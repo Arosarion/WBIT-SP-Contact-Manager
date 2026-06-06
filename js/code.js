@@ -258,6 +258,45 @@ function deleteContact(contactId){
 }
 
 // Edit contact function.
-function editContact(){
-	// TODO	
+function editContact(contactId)
+{
+    let firstName = document.getElementById("editFirstName").value;
+    let lastName = document.getElementById("editLastName").value;
+    let email = document.getElementById("editEmail").value;
+    let phone = document.getElementById("editPhone").value;
+
+    document.getElementById("editResult").innerHTML = "";
+
+    let tmp = {contactId:contactId, userId:userId, firstName:firstName, lastName:lastName, email:email, phone:phone};
+    let jsonPayload = JSON.stringify(tmp);
+
+    let url = urlBase + '/EditContact.' + extension;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try
+    {
+        xhr.onreadystatechange = function()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+                let jsonObject = JSON.parse(xhr.responseText);
+                if(jsonObject.error == "")
+                {
+                    document.getElementById("editResult").innerHTML = "Contact updated successfully.";
+                    searchContacts();
+                }
+                else
+                {
+                    document.getElementById("editResult").innerHTML = jsonObject.error;
+                }
+            }
+        };
+        xhr.send(jsonPayload);
+    }
+    catch(err)
+    {
+        document.getElementById("editResult").innerHTML = err.message;
+    }
 }

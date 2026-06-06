@@ -1,0 +1,21 @@
+name: Deploy to Server
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    reuns-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Deploy to Server
+        Usess: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "css/,images/,js/,LAMPAPI/,index.html,contact.html"
+          target: /var/www/html/
+          strip_components: 0
