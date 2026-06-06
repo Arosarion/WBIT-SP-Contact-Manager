@@ -186,3 +186,70 @@ select{
     font-family: 'Ubuntu', sans-serif;
 }
 
+//contact css test
+
+
+#editDiv
+{
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+
+    background-color: rgba(248, 247, 243, 0.85);
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+#editDiv h2
+{
+    font-family: 'PlayFairDisplay', sans-serif;
+    margin-bottom: 15px;
+}
+
+#editDiv input[type="text"]
+{
+    width: 80%;
+    margin: 8px auto;
+    padding: 10px;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 18px;
+
+    display: block;
+}
+
+#editDiv button
+{
+    font-size: 18px;
+
+    border-radius: 25px;
+
+    border: none;
+
+    background-color: #fffa71;
+
+    padding: 10px 20px;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+}
+
+#editDiv button:hover
+{
+    background-color: #00d5124f;
+    color: white;
+}
+
+#editResult
+{
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
