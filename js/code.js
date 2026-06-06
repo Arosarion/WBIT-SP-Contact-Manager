@@ -4,6 +4,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let currentContactId = 0; 
 
 // Login function. 
 function doLogin()
@@ -168,8 +169,11 @@ function searchContacts()
 				
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
-					contactList += jsonObject.results[i].firstName + " " + jsonObject.results[i].lastName + " - " + jsonObject.results[i].email + " - " + jsonObject.results[i].phone;
-					contactList += "<br>";
+					contactList += '<div class="contact-item">';
+					contactList += '<span>' + jsonObject.results[i].firstName + ' ' + jsonObject.results[i].lastName + ' - ' + jsonObject.results[i].email + ' - ' + jsonObject.results[i].phone + '</span>';
+					contactList += '<button onclick="deleteContact(' + jsonObject.results[i].id + ')">Delete</button>';
+					contactList += '<button onclick="editContact(' + jsonObject.results[i].id + ')">Edit</button>';
+					contactList += '</div>';
 				}	
 
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
@@ -260,18 +264,17 @@ function deleteContact(contactId){
 // Edit contact function.
 function editContact(contactId)
 {
+    currentContactId = contactId;
+    document.getElementById("editDiv").style.display = "block";
+    
     let firstName = document.getElementById("editFirstName").value;
     let lastName = document.getElementById("editLastName").value;
     let email = document.getElementById("editEmail").value;
     let phone = document.getElementById("editPhone").value;
-
     document.getElementById("editResult").innerHTML = "";
-
     let tmp = {contactId:contactId, userId:userId, firstName:firstName, lastName:lastName, email:email, phone:phone};
     let jsonPayload = JSON.stringify(tmp);
-
     let url = urlBase + '/EditContact.' + extension;
-
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -285,6 +288,7 @@ function editContact(contactId)
                 if(jsonObject.error == "")
                 {
                     document.getElementById("editResult").innerHTML = "Contact updated successfully.";
+                    document.getElementById("editDiv").style.display = "none";
                     searchContacts();
                 }
                 else
