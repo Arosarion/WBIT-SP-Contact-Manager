@@ -1,26 +1,26 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>COP 4331 LAMP Stack Contact Page</title>
-	<script type="text/javascript" src="js/md5.js"></script>
-	<script type="text/javascript" src="js/code.js"></script>
-    <link href="css/styles.css" rel="stylesheet">	
+    <meta charset="UTF-8">
+    <meta name="description" content="Personal contact manager application">
+    <title>Contact Manager</title>
+    <script type="text/javascript" src="js/code.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 <body>
-
-<h2 id="title">Yellow Pages</h2>
-
+<main>
+<h1 id="title">Yellow Pages</h1>
 <div id="loginDiv">
-	<h1>Welcome Back</h1>
-
-	<h3>Username</h3>
-	<input type="text" id="loginName" placeholder="Username" /><br />
-	<h3>Password</h3>
-	<input type="password" id="loginPassword" placeholder="Password"/><br />
-	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Enter </button>
-	<span id="loginResult"></span>
-	<a href="newuser.html">Sign up</a>
+    <h2>Welcome Back</h2>
+    <span>Username</span><br>
+    <input type="text" id="loginName" placeholder="Username" /><br />
+    <span>Password</span><br>
+    <input type="password" id="loginPassword" placeholder="Password"/><br />
+    <button type="button" onclick="doLogin();">Enter</button>
+    <span id="loginResult"></span>
+    <p><a href="newuser.html">Sign up</a></p>
 </div>
-
+</main>
 </body>
 </html>

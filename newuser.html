@@ -1,22 +1,30 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Personal contact manager application">
     <title>Contact Manager - Register</title>
     <script type="text/javascript" src="js/code.js"></script>
     <link href="css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 <body>
-
-<h2 id="title">Yellow Pages</h2>
-
-<div id="loginDiv">
-	<h1>Create new account</h1>
-	<h3>Username</h3>
-	<input type="text" id="loginName" placeholder="Username" /><br />
-	<h3>Password</h3>
-	<input type="password" id="loginPassword" placeholder="Password"/><br />
-	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Enter </button>
-	<span id="loginResult"></span>
+<main>
+<h1 id="title">Yellow Pages</h1>
+<div id="registerDiv">
+    <h2>Create new account</h2>
+    <span>First Name</span><br>
+    <input type="text" id="registerFirstName" placeholder="First Name" /><br />
+    <span>Last Name</span><br>
+    <input type="text" id="registerLastName" placeholder="Last Name" /><br />
+    <span>Username</span><br>
+    <input type="text" id="registerName" placeholder="Username" /><br />
+    <span>Password</span><br>
+    <input type="password" id="registerPassword" placeholder="Password"/><br />
+    <button type="button" onclick="doRegister();">Enter</button>
+    <span id="registerResult"></span>
+    <p><a href="index.html">Already have an account? Login</a></p>
 </div>
+</main>
 </body>
 </html>

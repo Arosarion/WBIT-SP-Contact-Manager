@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contacts</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Personal contact manager application">
+    <title>Contact Manager</title>
     <script src="js/code.js"></script>
-        <link href="css/contact.css" rel="stylesheet">	
+    <link href="css/contact.css" rel="stylesheet">
 </head>
-
 <body onload="readCookie();">
-
-<h1>Contact Manager</h1>
+<main>
+<h1>Yellow Pages</h1>
 <button onclick="doLogout()">Logout</button>
 <hr>
-
 <h2>Add Contact</h2>
 <input type="text" id="addFirstName" placeholder="First Name">
 <br>
@@ -21,18 +21,15 @@
 <br>
 <input type="text" id="addPhone" placeholder="Phone Number">
 <br>
-
 <button onclick="addContact()">Add Contact</button>
 <span id="contactAddResult"></span>
-
 <hr>
 <h2>Search Contacts</h2>
 <input type="text" id="searchText" placeholder="Search">
-<button  type="button" id="loginButton" class="buttons" onclick="searchContacts()">Search</button>
+<button onclick="searchContacts()">Search</button>
 <span id="contactSearchResult"></span>
 <hr>
 <p></p>
-
 <div id="editDiv" style="display:none;">
     <h2>Edit Contact</h2>
     <input type="text" id="editFirstName" placeholder="First Name">
@@ -43,18 +40,16 @@
     <br>
     <input type="text" id="editPhone" placeholder="Phone">
     <br>
-    <button type="button" id="loginButton" class="buttons" onclick="editContact(currentContactId)">Save</button>
+    <button onclick="editContact(currentContactId)">Save</button>
     <span id="editResult"></span>
 </div>
-    
-    
+
 <div id="contactListDiv">
     <h2>Contact List</h2>
     <div id="contactListContainer">
         No contacts found.
     </div>
 </div>
-
-    
+</main>
 </body>
 </html>

@@ -4,6 +4,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let lastSearch = "";
 let currentContactId = 0; 
 
 // Login function. 
@@ -142,14 +143,25 @@ function addContact()
 	
 }
 
+ // Show edit contact form function.
+function showEdit(id, firstName, lastName, email, phone)
+{
+    currentContactId = id;
+    document.getElementById("editFirstName").value = firstName;
+    document.getElementById("editLastName").value = lastName;
+    document.getElementById("editEmail").value = email;
+    document.getElementById("editPhone").value = phone;
+    document.getElementById("editDiv").style.display = "block";
+}
+
 // Search contact function.
 function searchContacts()
 {
 	let contactList = "";
-	let srch = document.getElementById("searchText").value;
+	lastSearch = document.getElementById("searchText").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
 	
-	let tmp = {search:srch,userId:userId};
+	let tmp = {search:lastSearch,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/SearchContacts.' + extension;
@@ -172,7 +184,7 @@ function searchContacts()
 					contactList += '<div class="contact-item">';
 					contactList += '<span>' + jsonObject.results[i].firstName + ' ' + jsonObject.results[i].lastName + ' - ' + jsonObject.results[i].email + ' - ' + jsonObject.results[i].phone + '</span>';
 					contactList += '<button onclick="deleteContact(' + jsonObject.results[i].id + ')">Delete</button>';
-					contactList += '<button onclick="editContact(' + jsonObject.results[i].id + ')">Edit</button>';
+					contactList += '<button onclick="showEdit(' + jsonObject.results[i].id + ',\'' + jsonObject.results[i].firstName + '\',\'' + jsonObject.results[i].lastName + '\',\'' + jsonObject.results[i].email + '\',\'' + jsonObject.results[i].phone + '\')">Edit</button>';
 					contactList += '</div>';
 				}	
 
@@ -249,15 +261,15 @@ function deleteContact(contactId){
             if (this.readyState == 4 && this.status == 200) {
                 let jsonObject = JSON.parse(xhr.responseText);
                 if(jsonObject.error == "") {
-                    searchContacts(); // Refresh the list
+                    searchContacts();
                 } else {
-                    alert(jsonObject.error);
+                    document.getElementById("contactSearchResult").innerHTML = jsonObject.error;
                 }
             }
         };
         xhr.send(jsonPayload);
     } catch(err) {
-        alert(err.message);
+        document.getElementById("contactSearchResult").innerHTML = err.message;
     }
 }
 
