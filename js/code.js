@@ -304,3 +304,58 @@ function editContact(contactId)
         document.getElementById("editResult").innerHTML = err.message;
     }
 }
+
+// contact list function
+
+function userContactList()
+{
+    let search = "";
+    let tmp =
+    {
+        search : search,
+        userId : userId
+    };
+
+    let jsonPayload = JSON.stringify(tmp);
+    let url = urlBase + '/SearchContacts.' + extension;
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    xhr.onreadystatechange = function()
+    {
+        if(this.readyState == 4 && this.status == 200)
+        {
+            let jsonObject = JSON.parse(xhr.responseText);
+            let output = "";
+            if(jsonObject.results.length == 0)
+            {
+                output = "No contacts found.";
+            }
+            else
+            {
+                for(let i = 0; i < jsonObject.results.length; i++)
+                {
+                    output +=
+                    `
+                    <div class="contactCard">
+                        <div class="contactName">
+                            ${jsonObject.results[i].firstName}
+                            ${jsonObject.results[i].lastName}
+                        </div>
+
+                        <div class="contactInfo">
+                            Email: ${jsonObject.results[i].email}<br>
+                            Phone: ${jsonObject.results[i].phone}
+                        </div>
+                    </div>
+                    `;
+                }
+            }
+
+            document.getElementById("contactListContainer").innerHTML = output;
+        }
+    };
+
+    xhr.send(jsonPayload);
+}
