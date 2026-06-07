@@ -186,8 +186,6 @@ select{
     font-family: 'Ubuntu', sans-serif;
 }
 
-//contact css test
-
 #contactListDiv
 {
     width: 70%;
@@ -253,4 +251,27 @@ select{
 .contactButtons button
 {
     margin-right: 8px;
+}
+
+button {
+    font-size: 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #fffa71;
+    min-height: 44px;
+    padding: 10px 20px;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+}
+
+input[type="text"], input[type="password"] {
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    text-align: left;
+    width: 90%;
+    min-height: 44px;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #ffffff;
 }

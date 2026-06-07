@@ -170,3 +170,14 @@ input[type="text"],input[type="password"]{
     width: 20%;
     margin-left: 40%;
 }
+
+button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 20px;
+}
+
+input[type="text"], input[type="password"] {
+    min-height: 44px;
+    padding: 10px;
+}
