@@ -57,7 +57,7 @@ body
     position: relative;
     top: 100px;
     max-width: 400px;
-    height: 480px;
+    height: 580px;
     margin: 0 auto;
     padding: 15px;
     background-color: #f8f7f3d2;
@@ -82,8 +82,16 @@ h1
     font-family: 'StyleScript', sans-serif;
     color: #000000;
 }
+h2{
+    text-align: center;
+}
 h3{
     padding-left: 5%;
+}
+span{
+    padding-left: 5%;
+    padding-bottom: 10%;
+    font-size: 20px;
 }
 #accessUIDiv
 {
@@ -130,14 +138,6 @@ h3{
     padding-top: 5px;
     padding-bottom: 5px;
 }
-#searchText
-{
-	font-size: 30px;
-}
-#colorText
-{
-	font-size: 30px;
-}
 
 input[type="text"],input[type="password"]{
     margin-left: 20px;
@@ -145,7 +145,7 @@ input[type="text"],input[type="password"]{
     border-radius: 20px;
     text-align: left;
     width: 90%;
-    
+    margin-bottom: 5%;
     font-family: 'Ubuntu', sans-serif;
 }
 
