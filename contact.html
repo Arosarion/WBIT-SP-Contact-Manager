@@ -9,27 +9,36 @@
 </head>
 <body onload="readCookie();">
 <main>
+
+<!-- title -->
 <h1>Yellow Pages</h1>
 <button onclick="doLogout()">Logout</button>
 <hr>
+
 <h2>Add Contact</h2>
+<!-- Add contact form  -->
+<div class="input-grid">
 <input type="text" id="addFirstName" placeholder="First Name">
-<br>
 <input type="text" id="addLastName" placeholder="Last Name">
-<br>
 <input type="text" id="addEmail" placeholder="Email">
-<br>
 <input type="text" id="addPhone" placeholder="Phone Number">
+</div>
 <br>
+
+<!-- add contact button and result span -->
 <button onclick="addContact()">Add Contact</button>
 <span id="contactAddResult"></span>
 <hr>
+
+<!-- search contacts form --> 
 <h2>Search Contacts</h2>
 <input type="text" id="searchText" placeholder="Search">
 <button onclick="searchContacts()">Search</button>
 <span id="contactSearchResult"></span>
 <hr>
 <p></p>
+
+<!-- search results and edit form -->
 <div id="editDiv" style="display:none;">
     <h2>Edit Contact</h2>
     <input type="text" id="editFirstName" placeholder="First Name">
@@ -44,6 +53,7 @@
     <span id="editResult"></span>
 </div>
 
+<!-- contact list container  -->
 <div id="contactListDiv">
     <h2>Contact List</h2>
     <div id="contactListContainer">

@@ -188,7 +188,7 @@ function searchContacts()
 					contactList += '</div>';
 				}	
 
-				document.getElementsByTagName("p")[0].innerHTML = contactList;
+				document.getElementById("contactListContainer").innerHTML = contactList;
 			}
 		};
 		xhr.send(jsonPayload);

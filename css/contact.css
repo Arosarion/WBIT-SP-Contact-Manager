@@ -1,59 +1,52 @@
-/* 1. Define the custom font at the top of your CSS file */
+/* ===== FONTS ===== */
 @font-face {
     font-family: 'StyleScript';
     src: url('./assets/StyleScript-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap; /* Keeps text visible while the font loads */
+    font-display: swap;
 }
 @font-face {
     font-family: 'PlayFairDisplay';
     src: url('./assets/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: swap; /* Keeps text visible while the font loads */
+    font-display: swap;
 }
-#title{
-    text-align: left;
-    font-family: 'PlayFairDisplay', sans-serif;
-    color: #a7a513;
-    margin-top: 1%;
-    margin-left: 1%;
-}
-body 
-{
+
+/* ===== BODY ===== */
+body {
     background-color: #ffffff;
     margin: 0;
     min-height: 100vh;
-
     background-image: url('../images/147736.jpg');
-    background-size: cover;      /* Fill entire screen */
-    background-position: center; /* Center image */
+    background-size: cover;
+    background-position: center;
     background-repeat: repeat;
-    background-attachment: fixed; /* Optional: stays fixed when scrolling */
+    background-attachment: fixed;
 }
 
+/* ===== TYPOGRAPHY ===== */
+h1 {
+    font-family: 'StyleScript', cursive;
+    font-size: 28px;
+    color: #8a7a10;
+    margin: 0;
+    text-align: center;
+    margin-top: 20px;
+}
 
-#text1{
-    margin-left: 20px;
+h2 {
+    font-family: 'PlayFairDisplay', serif;
     font-size: 20px;
+    font-style: italic;
+    color: #3a3020;
+    margin: 0 0 14px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(167,165,19,0.3);
 }
 
-#text2{
-    margin-left: 20px;
-    font-size: 20px;
-}
-#loginDiv {
-    position: relative;
-    top: 100px;
-    max-width: 400px;
-    height: 400px;
-    margin: 0 auto;
-    padding: 15px;
-    background-color: #f8f7f3d2;
-    border-radius: 10px;
-}
-a{
+a {
     display: block;
     text-align: right;
     padding-right: 5%;
@@ -61,153 +54,92 @@ a{
     color: #1131ff;
 }
 
+/* ===== LAYOUT ===== */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-h1
-{
-    font-size: 40px;
-    margin-top: 50px;
+.card {
+    background: rgba(248,247,243,0.92);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+/* ===== INPUTS ===== */
+input[type="text"], input[type="password"] {
     width: 100%;
-    /*margin: 2% 5%;*/
-    text-align: center;
-    font-family: 'StyleScript', sans-serif;
-    color: #000000;
-}
-h3{
-    padding-left: 5%;
-}
-#accessUIDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
-}
-
-.buttons
-{
-    font-size: 20px;
-    border-radius: 25px;
-    width: 20%;
-    border: none;
-    background-color: #fffa71;
-   
+    box-sizing: border-box;
+    border: 1px solid #d4c89a;
+    border-radius: 20px;
+    padding: 10px 16px;
     font-family: 'Ubuntu', sans-serif;
-    margin-top: 5%;
-    margin-left: 6%;
-    
-    padding-top: 5px;
-    padding-bottom: 5px;
+    font-size: 14px;
+    background: white;
+    min-height: 44px;
 }
 
-.buttons:hover{
-    background-color: #00d5124f;
-    color: #ffffff;
-    opacity: 50%;
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    border-color: #a7a513;
 }
 
-#editFirstName
-{
-	font-size: 20px;
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-#editLastName
-{
-	font-size: 20px;
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-#editEmail
-{
-	font-size: 20px;
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-#editPhone
-{
-	font-size: 20px;
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-
-input[type="text"],input[type="password"]{
-    margin-left: 20px;
+/* ===== BUTTONS ===== */
+button {
+    background: #fffa71;
     border: none;
     border-radius: 20px;
-    text-align: left;
-    width: 90%;
-    
+    padding: 10px 24px;
     font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    min-height: 44px;
 }
 
-#inner-title{
-    display: inline-block;
-    font-size: 1 em;
-    width: 90%;
-    margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #000000;
+button:hover {
+    background: #f0eb50;
 }
 
-#loginResult{
-    display: inline-block;
-    font-size: 0.8em;
-    width: 90%;
-    text-align: center;
-    margin-left: 5%;
-    margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+.delete-btn {
+    background: #ffe0e0;
+    color: #c62828;
+    padding: 6px 14px;
+    font-size: 12px;
+    min-height: unset;
 }
 
-#userName{
-    display: inline-block;
-    width: 80%;
-    margin-left: 10%;
-    text-align: center;
+.delete-btn:hover {
+    background: #ffcccc;
 }
 
-#logoutButton{
-    width: 20%;
-    margin-left: 40%;
+.edit-btn {
+    background: #fffa71;
+    padding: 6px 14px;
+    font-size: 12px;
+    min-height: unset;
 }
 
-select{
-    width: 30%;
-    margin-left: 35%;
-    margin-top: 2%;
-    font-size: 0.75em;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-#contactListDiv
-{
-    width: 70%;
-    margin: 30px auto;
+/* ===== CONTACT LIST ===== */
+#contactListDiv {
+    width: 100%;
+    margin-top: 16px;
     padding: 20px;
     background-color: rgba(248,247,243,0.85);
     border-radius: 10px;
-    test-align: center;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
 }
 
-#contactListDiv h2
-{
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: black;
-}
-
-#contactListContainer
-{
+#contactListContainer {
     text-align: left;
     padding: 15px;
     max-height: 400px;
@@ -217,61 +149,54 @@ select{
     border: 1px solid #ddd;
 }
 
-.contactCard
-{
-    padding: 12px;
-    margin-bottom: 10px;
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: white;
     border-radius: 8px;
-    background-color: #f7f7f7;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 8px;
+    border: 1px solid #e8e2d0;
 }
 
-.contactCard:hover
-{
-    background-color: #eeeeee;
+.contact-name {
+    font-weight: 500;
+    color: #3a3020;
+    font-size: 14px;
 }
 
-.contactName
-{
-    font-size: 20px;
-    font-weight: bold;
+.contact-detail {
+    color: #777;
+    font-size: 12px;
+    margin-top: 2px;
 }
 
-.contactInfo
-{
-    margin-top: 5px;
-    color: #555;
+.contact-actions {
+    display: flex;
+    gap: 6px;
 }
 
-.contactButtons
-{
-    margin-top: 10px;
+/* ===== RESULT MESSAGES ===== */
+#contactAddResult, #contactSearchResult, #editResult {
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 10px;
+    color: #3a3020;
 }
 
-.contactButtons button
-{
-    margin-right: 8px;
+/* ===== MISC ===== */
+#userName {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
 }
 
-button {
-    font-size: 20px;
-    border-radius: 25px;
-    border: none;
-    background-color: #fffa71;
-    min-height: 44px;
-    padding: 10px 20px;
+select {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 2%;
+    font-size: 0.75em;
     font-family: 'Ubuntu', sans-serif;
-    cursor: pointer;
-}
-
-input[type="text"], input[type="password"] {
-    margin-left: 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    text-align: left;
-    width: 90%;
-    min-height: 44px;
-    padding: 10px;
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #ffffff;
 }
